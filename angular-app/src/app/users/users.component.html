@@ -1,0 +1,15 @@
+<div class="card" style="width: 300px;" appHighlight>
+  <ng-content></ng-content>
+    <div class="card-image">
+      <img [src]="img">
+      <span class="card-title">{{name | uppercase }}</span>
+    </div>
+    <div class="card-content">
+        <h5>Name - {{name}}</h5>
+        <h5>Age - {{age}}</h5>
+        <h5>Status - {{status}}</h5>
+        <h5>Salary - {{salary | currency:"INR" }}</h5>
+    </div>
+  </div>
+
+  <button class="btn pink" (click)="passData()">pass data to parent</button>

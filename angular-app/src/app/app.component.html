@@ -1,0 +1,24 @@
+<div  *ngIf="show" style="display: flex; justify-content: space-around;flex-wrap: wrap;">
+  <app-users 
+
+   *ngFor="let user of users"
+    [name]="user.name"
+    [age]="user.age" 
+    [status]="user.status" 
+    [salary]="user.salary"
+    [img]="user.imagePath"
+    (myevnt)="reveivedData($event)"
+    [title]="title" 
+ 
+    >
+    <h2>{{title}}</h2>
+    <input type="text" [(ngModel)]="title" />
+  </app-users>
+  
+</div>
+
+<h1> {{phoneno | ccode }}</h1>
+
+<button  class="btn red"  (click)="show = !show">toggle componenet</button>
+
+

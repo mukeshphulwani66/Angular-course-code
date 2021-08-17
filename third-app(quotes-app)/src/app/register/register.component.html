@@ -1,0 +1,25 @@
+<form class="container" #registerFrom="ngForm">
+    <h4>Register</h4>
+    <input 
+     type="email" 
+     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+     name="email" 
+     required 
+     ngModel 
+     #email="ngModel"
+     />
+    <h5 class="red-text" [hidden]="email.valid || email.untouched">Enter Correct email</h5>
+    <input 
+     type="password"
+     name="password"
+     minlength="6"
+     required
+     ngModel
+     #password="ngModel"
+     />
+    <h5 class="red-text" [hidden]="password.valid || password.untouched">Password is required and must be > 6 digits</h5>
+    <button class="btn green" [disabled]="registerFrom.invalid" (click)="register(registerFrom)">Login</button>
+    <button class="btn red" style="margin-left: 20px;" (click)="reset(registerFrom)">Reset</button>
+</form>
+
+

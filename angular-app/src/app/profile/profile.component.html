@@ -1,0 +1,32 @@
+<h1>
+    I am {{name | titlecase}} my age is {{age}}
+     my status is {{status}} and my salary is {{salary | currency:'INR'}}
+</h1>
+<input type="date" [(ngModel)]="mydate">
+{{mydate | date:'dd  MMMM yyyy'}}
+<!-- property binding -->
+<button [class]="btnColor" [disabled]="isDisable">click me</button>
+<!-- event binding -->
+<button (click)="convertToINR()" class="btn">show salary in INR</button>
+<!-- two way data binding -->
+<!-- <input type="text" [value]="inputValue" (input)="getInput($event)"> -->
+<input type="text" [(ngModel)]="inputValue">
+<h1>{{inputValue}}</h1>
+
+
+<!-- directives -->
+<h3 *ngIf="salary > 50;else lowsal">party to banti hai</h3>
+<ng-template #lowsal>
+    <h3>salary is too low to get a gf</h3>
+</ng-template>
+
+
+<ul>
+    <li *ngFor="let f of fruits;index as i;even as e" [ngClass]="{'red': e, 'pink':!e}" >
+        <h1>
+           {{i}} - {{f}}
+        </h1>
+</li>
+</ul>
+
+

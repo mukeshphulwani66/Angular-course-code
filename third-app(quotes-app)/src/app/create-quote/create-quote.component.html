@@ -1,0 +1,5 @@
+<div class="container">
+    <input type="text" [formControl]="quote" />
+    <h5 class="red-text" [hidden]="quote.valid || quote.untouched">This is required</h5>
+    <button class="btn green" (click)="save()">save</button>
+</div>
